@@ -12,6 +12,7 @@ console.log("MAIL_TO:", process.env.MAIL_TO);
 
 const app = express();
 
+
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
