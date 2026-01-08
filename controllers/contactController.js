@@ -16,17 +16,24 @@ const sendContactMail = async (req, res) => {
       to: process.env.MAIL_TO,
       subject: "New Contact Message",
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
+        <h3>New Contact Submission</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b> ${message}</p>
       `,
     });
 
-    res.status(200).json({ success: true, message: "Email sent successfully" });
+    res.status(200).json({
+      success: true,
+      message: "Email sent successfully",
+    });
   } catch (error) {
-    console.error("MAIL ERROR:", error);
-    res.status(500).json({ success: false, message: "Email sending failed" });
+    console.error("MAIL ERROR FULL:", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Email sending failed",
+    });
   }
 };
 
