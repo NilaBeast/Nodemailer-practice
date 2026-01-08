@@ -5,8 +5,8 @@ const contactRoutes = require("./routes/contactRoutes");
 
 dotenv.config();
 
-console.log("MAIL_USER:", process.env.MAIL_USER);
-console.log("MAIL_PASS EXISTS:", !!process.env.MAIL_PASS);
+
+console.log("BREVO_API_KEY", process.env.MAIL_PASS);
 console.log("MAIL_TO:", process.env.MAIL_TO);
 
 
